@@ -1,0 +1,17 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.bak
+*.pre-*.bak
+models/
+test/
+build/
+dist/
+build_release*/
+settings.json
+installer/*.exe
+installer/*.dat*
+installer/*.zip
+installer/*.new
+installer/*.previous
