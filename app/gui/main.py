@@ -10,7 +10,7 @@ from pathlib import Path
 
 from PIL import Image, ImageOps, ImageTk
 
-APP_VERSION = "V.3.0"
+APP_VERSION = "V.2.2.8"
 UNITS_TO_INCH = {"px": None, "mm": 1 / 25.4, "cm": 1 / 2.54, "m": 100 / 2.54, "inch": 1, "feet": 12}
 DPI_PRESETS = ["72", "96", "100", "150", "200", "300", "Custom"]
 UPSCALE_STEPS = {"2x": 2, "4x": 4, "8x": 8}
@@ -46,6 +46,8 @@ EN = {
     "เปิดภาพไม่สำเร็จ": "Could not open image", "ประมวลผลสำเร็จ": "Processing complete",
     "ไฟล์:": "File:", "ARM AI ERROR": "ARM AI ERROR", "ระบุ DPI ที่ต้องการ:": "Enter the desired DPI:",
     "รายการไฟล์ต้นฉบับ": "Source files", "เลือกทั้งหมด": "Select all", "ยกเลิกทั้งหมด": "Deselect all",
+    "***สำหรับเวอร์ชันนี้ไฟล์ที่ปรับเสร็จแล้วจะอยู่ในโฟลเดอร์เดียวกันกับภาพต้นฉบับ": "***In this version, enhanced images are saved in the same folder as the originals.",
+    "เปิดโฟลเดอร์ผลลัพธ์": "Open output folder",
     "ต้นฉบับ": "Original", "ผลลัพธ์ตามค่าปัจจุบัน": "Output at current settings", "ลบออกจากรายการ": "Remove from list",
     "ต้องเลือกอย่างน้อยหนึ่งไฟล์": "Select at least one file", "กำลังประมวลผลไฟล์": "Processing file",
     "ไฟล์ที่เลือกเสร็จแล้ว": "Selected files complete", "ยืนยันลบ": "Remove image", "ต้องการลบไฟล์นี้ออกจากรายการหรือไม่?": "Remove this image from the list?",
@@ -85,7 +87,8 @@ ZH = {
     "ขนาดไม่ถูกต้อง": "尺寸无效", "กรุณากรอก Width และ Height ให้ถูกต้อง": "请输入有效的宽度和高度。",
     "เปิดภาพไม่สำเร็จ": "无法打开图像", "ประมวลผลสำเร็จ": "处理完成", "ไฟล์:": "文件：",
     "ระบุ DPI ที่ต้องการ:": "请输入所需 DPI：", "รายการไฟล์ต้นฉบับ": "源文件列表", "เลือกทั้งหมด": "全选",
-    "ยกเลิกทั้งหมด": "全部取消", "ต้นฉบับ": "原始图像", "ผลลัพธ์ตามค่าปัจจุบัน": "按当前设置输出",
+    "ยกเลิกทั้งหมด": "全部取消", "***สำหรับเวอร์ชันนี้ไฟล์ที่ปรับเสร็จแล้วจะอยู่ในโฟลเดอร์เดียวกันกับภาพต้นฉบับ": "***此版本的增强图像将保存在原图所在文件夹。",
+    "เปิดโฟลเดอร์ผลลัพธ์": "打开输出文件夹", "ต้นฉบับ": "原始图像", "ผลลัพธ์ตามค่าปัจจุบัน": "按当前设置输出",
     "ลบออกจากรายการ": "从列表中移除", "ต้องเลือกอย่างน้อยหนึ่งไฟล์": "请至少选择一个文件", "กำลังประมวลผลไฟล์": "正在处理文件",
     "ไฟล์ที่เลือกเสร็จแล้ว": "已完成文件", "ยืนยันลบ": "确认移除图像", "ต้องการลบไฟล์นี้ออกจากรายการหรือไม่?": "确定从列表中移除此图像吗？",
     "ภาพย่อ": "缩略图", "ชื่อไฟล์": "文件名", "ขนาดต้นฉบับ": "原始尺寸", "ขนาดหลัง Enhance": "增强后尺寸",
@@ -127,7 +130,8 @@ FR = {
     "ขนาดไม่ถูกต้อง": "Dimensions incorrectes", "กรุณากรอก Width และ Height ให้ถูกต้อง": "Saisissez une largeur et une hauteur valides.",
     "เปิดภาพไม่สำเร็จ": "Impossible d’ouvrir l’image", "ประมวลผลสำเร็จ": "Traitement terminé", "ไฟล์:": "Fichier :",
     "ระบุ DPI ที่ต้องการ:": "Saisissez le DPI souhaité :", "รายการไฟล์ต้นฉบับ": "Liste des fichiers source", "เลือกทั้งหมด": "Tout sélectionner",
-    "ยกเลิกทั้งหมด": "Tout désélectionner", "ต้นฉบับ": "Original", "ผลลัพธ์ตามค่าปัจจุบัน": "Résultat selon les paramètres actuels",
+    "ยกเลิกทั้งหมด": "Tout désélectionner", "***สำหรับเวอร์ชันนี้ไฟล์ที่ปรับเสร็จแล้วจะอยู่ในโฟลเดอร์เดียวกันกับภาพต้นฉบับ": "***Dans cette version, les images améliorées sont enregistrées avec les originaux.",
+    "เปิดโฟลเดอร์ผลลัพธ์": "Ouvrir le dossier de sortie", "ต้นฉบับ": "Original", "ผลลัพธ์ตามค่าปัจจุบัน": "Résultat selon les paramètres actuels",
     "ลบออกจากรายการ": "Retirer de la liste", "ต้องเลือกอย่างน้อยหนึ่งไฟล์": "Sélectionnez au moins un fichier", "กำลังประมวลผลไฟล์": "Traitement du fichier",
     "ไฟล์ที่เลือกเสร็จแล้ว": "Fichiers terminés", "ยืนยันลบ": "Retirer l’image", "ต้องการลบไฟล์นี้ออกจากรายการหรือไม่?": "Voulez-vous retirer cette image de la liste ?",
     "ภาพย่อ": "Miniature", "ชื่อไฟล์": "Nom du fichier", "ขนาดต้นฉบับ": "Dimensions d’origine", "ขนาดหลัง Enhance": "Dimensions après amélioration",
@@ -248,6 +252,9 @@ class ArmAIApp:
             window_y = max(0, (screen_height - window_height) // 2)
         root.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
         root.minsize(min(900, screen_width), min(650, screen_height))
+        # Keep the splash fixed-size, then restore normal resizing for the
+        # working window so users can maximize/restore and reach its controls.
+        root.resizable(True, True)
         root.tk.call("tk", "scaling", 1.2)
         for font_name in ("TkDefaultFont", "TkTextFont", "TkMenuFont", "TkHeadingFont", "TkCaptionFont"):
             try:
@@ -280,7 +287,7 @@ class ArmAIApp:
         self._preview_refs = {}
         self.scale_var = tk.StringVar(value=self.settings.get("scale", "4x") if self.settings.get("scale") in UPSCALE_STEPS else "4x")
         self.output_mode_var = tk.StringVar(value=self.settings.get("output_mode", "print") if self.settings.get("output_mode") in ("print", "upscale") else "print")
-        saved_dpi = str(self.settings.get("dpi", "300"))
+        saved_dpi = str(self.settings.get("dpi", "72"))
         if saved_dpi == "Custom":
             saved_dpi = self.t("Custom")
         self.dpi_var = tk.StringVar(value=saved_dpi)
@@ -288,7 +295,7 @@ class ArmAIApp:
         self.width_var = tk.StringVar(value=str(self.settings.get("width", "")))
         self.height_var = tk.StringVar(value=str(self.settings.get("height", "")))
         self.resize_mode_var = tk.StringVar(value=self.settings.get("resize_mode", "preserve" if self.settings.get("lock_ratio", True) else "stretch"))
-        if self.resize_mode_var.get() not in ("stretch", "preserve", "ai_expand"):
+        if self.resize_mode_var.get() not in ("stretch", "preserve"):
             self.resize_mode_var.set("preserve")
         self.resize_mode_label_var = tk.StringVar()
         saved_device = self.settings.get("device", "AUTO")
@@ -317,6 +324,7 @@ class ArmAIApp:
         style.configure("TEntry", font=("Tahoma", 12), padding=4)
         style.configure("TCombobox", font=("Tahoma", 12), padding=4)
         style.configure("Section.TLabelframe.Label", font=("Tahoma", 12, "bold"))
+        self._build_help_menu()
         self._build_language_selector(root)
         self._build_header(root)
 
@@ -327,9 +335,21 @@ class ArmAIApp:
         workspace.columnconfigure(0, weight=0, minsize=330)
         workspace.columnconfigure(1, weight=1)
         workspace.rowconfigure(0, weight=1)
-        sidebar = ttk.Frame(workspace, width=330)
-        sidebar.grid(row=0, column=0, sticky="nsew", padx=(0, 8))
-        sidebar.grid_propagate(False)
+        sidebar_shell = ttk.Frame(workspace, width=330)
+        sidebar_shell.grid(row=0, column=0, sticky="nsew", padx=(0, 8))
+        sidebar_shell.grid_propagate(False)
+        self.sidebar_canvas = tk.Canvas(sidebar_shell, highlightthickness=0, bd=0)
+        sidebar_scroll = ttk.Scrollbar(sidebar_shell, orient="vertical", command=self.sidebar_canvas.yview)
+        self.sidebar_canvas.configure(yscrollcommand=sidebar_scroll.set)
+        self.sidebar_canvas.pack(side="left", fill="both", expand=True)
+        sidebar_scroll.pack(side="right", fill="y")
+        sidebar = ttk.Frame(self.sidebar_canvas)
+        self.sidebar_window = self.sidebar_canvas.create_window((0, 0), window=sidebar, anchor="nw")
+        sidebar.bind("<Configure>", lambda _event: self.sidebar_canvas.configure(
+            scrollregion=self.sidebar_canvas.bbox("all")))
+        self.sidebar_canvas.bind("<Configure>", lambda event: self.sidebar_canvas.itemconfigure(
+            self.sidebar_window, width=event.width))
+        self.sidebar_canvas.bind("<MouseWheel>", self._sidebar_mousewheel)
         right = ttk.Frame(workspace)
         right.grid(row=0, column=1, sticky="nsew")
         right.columnconfigure(0, weight=1)
@@ -461,6 +481,7 @@ class ArmAIApp:
             self.recent_view = "thumbnails"
         self.set_language(self.language)
         self.root.bind("<Configure>", self._on_window_configure, add="+")
+        self.root.bind_all("<MouseWheel>", self._sidebar_mousewheel, add="+")
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
 
     def t(self, text):
@@ -468,16 +489,30 @@ class ArmAIApp:
             return text
         return TRANSLATIONS.get(self.language, EN).get(text, EN.get(text, text))
 
+    def _sidebar_mousewheel(self, event):
+        canvas = getattr(self, "sidebar_canvas", None)
+        if canvas is None:
+            return
+        left, top = canvas.winfo_rootx(), canvas.winfo_rooty()
+        if left <= event.x_root < left + canvas.winfo_width() and top <= event.y_root < top + canvas.winfo_height():
+            units = int(-event.delta / 120)
+            if units == 0 and event.delta:
+                units = -1 if event.delta > 0 else 1
+            canvas.yview_scroll(units, "units")
+            return "break"
+
     def _resize_mode_labels(self):
-        return [self.t("ยืดภาพ"), self.t("รักษาสัดส่วน"), self.t("เติมขอบด้วย AI")]
+        return [self.t("ยืดภาพ"), self.t("รักษาสัดส่วน")]
 
     def _sync_resize_mode_label(self):
-        key = {"stretch": "ยืดภาพ", "preserve": "รักษาสัดส่วน", "ai_expand": "เติมขอบด้วย AI"}.get(self.resize_mode_var.get(), "รักษาสัดส่วน")
+        key = {"stretch": "ยืดภาพ", "preserve": "รักษาสัดส่วน"}.get(self.resize_mode_var.get(), "รักษาสัดส่วน")
         self.resize_mode_label_var.set(self.t(key))
 
     def _resize_mode_selected(self, _event=None):
-        reverse = {self.t("ยืดภาพ"): "stretch", self.t("รักษาสัดส่วน"): "preserve", self.t("เติมขอบด้วย AI"): "ai_expand"}
+        reverse = {self.t("ยืดภาพ"): "stretch", self.t("รักษาสัดส่วน"): "preserve"}
         self.resize_mode_var.set(reverse.get(self.resize_mode_label_var.get(), "preserve"))
+        if self.resize_mode_var.get() == "preserve":
+            self._dimension_changed("width")
 
     def _dpi_choices(self):
         return [*DPI_PRESETS[:-1], self.t("Custom")]
@@ -847,6 +882,30 @@ class ArmAIApp:
     def _show_welcome_page(self):
         self._show_main_page()
 
+    def _build_help_menu(self):
+        self.menu_bar = tk.Menu(self.root, tearoff=False)
+        self.help_menu = tk.Menu(self.menu_bar, tearoff=False)
+        self.help_menu.add_command(label="", command=self._show_user_guide)
+        self.help_menu.add_command(label="", command=self._show_third_party_credits)
+        self.menu_bar.add_cascade(label="", menu=self.help_menu)
+        self.root.configure(menu=self.menu_bar)
+        self._translate_help_menu()
+
+    def _translate_help_menu(self):
+        from app.gui.third_party import translate
+        self.menu_bar.entryconfigure(0, label=translate("ช่วยเหลือ", self.language))
+        self.help_menu.entryconfigure(0, label=self.t("คู่มือผู้ใช้"))
+        self.help_menu.entryconfigure(1, label=translate("ใบอนุญาตและเครดิตบุคคลที่สาม", self.language))
+
+    def _show_third_party_credits(self):
+        from app.gui.third_party import ThirdPartyCredits
+        window = getattr(self, "_third_party_window", None)
+        if window is not None and window.winfo_exists():
+            window.lift()
+            window.focus_set()
+            return
+        self._third_party_window = ThirdPartyCredits(self.root, self.language)
+
     def _show_user_guide(self):
         window = tk.Toplevel(self.root)
         window.title(self.t("คู่มือผู้ใช้"))
@@ -1097,6 +1156,7 @@ class ArmAIApp:
         if language not in LANGUAGE_CHOICES:
             return
         self.language = language
+        self._translate_help_menu()
         self.language_var.set(LANGUAGE_CHOICES[language])
         self.dpi_box.configure(values=self._dpi_choices())
         if hasattr(self, "resize_mode_box"):
@@ -1174,6 +1234,14 @@ class ArmAIApp:
         tools.pack(fill="x", padx=6, pady=(2, 4))
         ttk.Button(tools, text="เลือกทั้งหมด", command=lambda: self._check_all(True)).pack(side="left", padx=3)
         ttk.Button(tools, text="ยกเลิกทั้งหมด", command=lambda: self._check_all(False)).pack(side="left", padx=3)
+        self.output_location_note = ttk.Label(
+            tools,
+            text="***สำหรับเวอร์ชันนี้ไฟล์ที่ปรับเสร็จแล้วจะอยู่ในโฟลเดอร์เดียวกันกับภาพต้นฉบับ",
+            wraplength=520,
+            justify="left",
+        )
+        self._static_texts[self.output_location_note] = "***สำหรับเวอร์ชันนี้ไฟล์ที่ปรับเสร็จแล้วจะอยู่ในโฟลเดอร์เดียวกันกับภาพต้นฉบับ"
+        self.output_location_note.pack(side="left", fill="x", expand=True, padx=(8, 4))
         headings = ttk.Frame(panel)
         headings.pack(fill="x", padx=8, pady=(0, 2))
         ttk.Label(headings, text="ภาพย่อ", width=11).pack(side="left", padx=(42, 0))
@@ -1248,6 +1316,11 @@ class ArmAIApp:
         fill = meter.create_rectangle(0, 0, 0, 23, fill="#2596F3", outline="")
         progress_text = meter.create_text(56, 11, text="0%", fill="#17324D", font=("Tahoma", 9, "bold"))
         meter.pack(side="right", padx=(4, 3), pady=7)
+        open_folder = ttk.Button(actions, text="📁", width=3,
+                                 command=lambda selected=item: self._open_output_folder(selected),
+                                 state="disabled")
+        open_folder.pack(side="right", padx=(2, 3))
+        item["open_folder_button"] = open_folder
         item["output_label"] = output
         item["face_status"] = face_status
         item["original_label"] = original
@@ -1366,6 +1439,9 @@ class ArmAIApp:
                 self.after_info.configure(text=self.t("จะแสดงตัวอย่างเมื่อประมวลผลเสร็จ"))
             if initialize_size:
                 self._set_dimensions_from_source()
+            elif (self.output_mode_var.get() == "print"
+                  and self.resize_mode_var.get() == "preserve"):
+                self._dimension_changed("width")
             self._recalculate()
             self._set_status("selected")
             if self.auto_preview_var.get():
@@ -1380,7 +1456,7 @@ class ArmAIApp:
             "width": self.settings.get("width", ""),
             "height": self.settings.get("height", ""),
             "unit": self.settings.get("unit", "cm"),
-            "dpi": self.settings.get("dpi", "300"),
+            "dpi": self.settings.get("dpi", "72"),
             "resize_mode": self.settings.get("resize_mode", "preserve" if self.settings.get("lock_ratio", True) else "stretch"),
             "scale": self.settings.get("scale", "4x"),
             "device": self.settings.get("device", "AUTO"),
@@ -1390,7 +1466,7 @@ class ArmAIApp:
         config.update({key: value for key, value in saved.items() if key in config})
         if "resize_mode" not in saved and "lock_ratio" in saved:
             config["resize_mode"] = "preserve" if saved["lock_ratio"] else "stretch"
-        if config["resize_mode"] not in ("stretch", "preserve", "ai_expand"):
+        if config["resize_mode"] not in ("stretch", "preserve"):
             config["resize_mode"] = "preserve" if config.get("lock_ratio", True) else "stretch"
         if config["output_mode"] not in ("print", "upscale"):
             config["output_mode"] = "print"
@@ -1470,12 +1546,9 @@ class ArmAIApp:
             except (ValueError, KeyError, AttributeError):
                 continue
             unit = config.get("unit", "cm")
-            if unit == "px":
-                shown_w, shown_h = tw, th
-            else:
-                factor = UNITS_TO_INCH[unit] * self._dpi(config)
-                shown_w, shown_h = tw / factor, th / factor
-            line = f"{self.t('ผลลัพธ์ตามค่าปัจจุบัน')}: {shown_w:,.2f} × {shown_h:,.2f} {unit} ({tw:,} × {th:,} px)"
+            dpi = self._dpi(config)
+            dimension_text = self._format_output_dimensions(tw, th, dpi, unit)
+            line = f"{self.t('ผลลัพธ์ตามค่าปัจจุบัน')}: {dimension_text}"
             item["output_label"].configure(text=line)
 
     def _target_box_size(self, config=None):
@@ -1817,13 +1890,38 @@ class ArmAIApp:
     def _dpi(self, config=None):
         try:
             value = int((config or {}).get("dpi", self.dpi_var.get()))
-            return value if value > 0 else 300
+            return value if value > 0 else 72
         except (TypeError, ValueError):
-            return 300
+            return 72
 
     def _dimension_changed(self, changed):
         if self._updating or self._loading_job_settings:
             return
+        if (self.output_mode_var.get() == "print"
+                and self.resize_mode_var.get() == "preserve"
+                and self.selected_item is not None):
+            try:
+                source_width, source_height = self.selected_item["size"]
+                ratio = source_width / source_height
+                changed_var = self.width_var if changed == "width" else self.height_var
+                paired_var = self.height_var if changed == "width" else self.width_var
+                value = float(changed_var.get())
+                if not (0 < value < float("inf")):
+                    raise ValueError
+                paired = value / ratio if changed == "width" else value * ratio
+                if self.unit_var.get() == "px":
+                    paired_text = str(max(1, round(paired)))
+                else:
+                    paired_text = f"{paired:.4f}".rstrip("0").rstrip(".")
+                if paired_var.get() != paired_text:
+                    self._updating = True
+                    try:
+                        paired_var.set(paired_text)
+                    finally:
+                        self._updating = False
+            except (TypeError, ValueError, ZeroDivisionError):
+                # Let users clear or temporarily enter an incomplete value.
+                pass
         self._recalculate()
 
     def _unit_changed(self, _event=None):
@@ -1835,7 +1933,7 @@ class ArmAIApp:
         if self.dpi_var.get() == self.t("Custom"):
             value = simpledialog.askinteger(self.t("Custom DPI"), self.t("ระบุ DPI ที่ต้องการ:"), parent=self.root, minvalue=1, maxvalue=2400)
             if value is None:
-                self.dpi_var.set("300")
+                self.dpi_var.set("72")
             else:
                 self.dpi_var.set(str(value))
         self._recalculate()
@@ -1854,6 +1952,21 @@ class ArmAIApp:
         self._updating = False
         self._recalculate()
 
+    @staticmethod
+    def _format_output_dimensions(pixel_width, pixel_height, dpi, unit):
+        if unit == "px":
+            width, height = pixel_width, pixel_height
+        else:
+            unit_per_inch = UNITS_TO_INCH[unit]
+            width = pixel_width / (dpi * unit_per_inch)
+            height = pixel_height / (dpi * unit_per_inch)
+
+        def pretty(value):
+            return f"{value:,.2f}".rstrip("0").rstrip(".")
+
+        return (f"{pretty(width)} × {pretty(height)} {unit}  •  "
+                f"{pixel_width:,} × {pixel_height:,} px  •  {dpi} DPI")
+
     def _recalculate(self, _event=None):
         try:
             config = self._read_job_config()
@@ -1866,14 +1979,8 @@ class ArmAIApp:
                 pixels = tuple(max(1, dimension * factor) for dimension in self.selected_item["size"])
                 dpi = self._dpi()
                 unit = self.unit_var.get()
-                if unit == "px":
-                    physical = (pixels[0] / dpi * 2.54, pixels[1] / dpi * 2.54)
-                    physical_text = f"  •  {physical[0]:,.2f} × {physical[1]:,.2f} cm"
-                else:
-                    factor_per_inch = UNITS_TO_INCH[unit]
-                    physical = (pixels[0] / (dpi * factor_per_inch), pixels[1] / (dpi * factor_per_inch))
-                    physical_text = f"  •  {physical[0]:,.2f} × {physical[1]:,.2f} {unit}"
-                self.pixel_info.configure(text=f"{pixels[0]:,} × {pixels[1]:,} px{physical_text}  •  {dpi} DPI")
+                self.pixel_info.configure(text=self._format_output_dimensions(
+                    pixels[0], pixels[1], dpi, unit))
             else:
                 width, height = float(self.width_var.get()), float(self.height_var.get())
                 if width <= 0 or height <= 0:
@@ -1883,7 +1990,10 @@ class ArmAIApp:
                 else:
                     factor = UNITS_TO_INCH[self.unit_var.get()] * self._dpi()
                     pixels = round(width * factor), round(height * factor)
-                self.pixel_info.configure(text=f"{pixels[0]:,} × {pixels[1]:,} px  •  DPI {self._dpi()}")
+                unit = self.unit_var.get()
+                dpi = self._dpi()
+                self.pixel_info.configure(text=self._format_output_dimensions(
+                    pixels[0], pixels[1], dpi, unit))
         except (ValueError, KeyError):
             self.pixel_info.configure(text=self.t("กรอก Width และ Height เป็นค่าบวก"))
         self._refresh_batch_rows()
@@ -1949,9 +2059,6 @@ class ArmAIApp:
                 engine_device = self._engine_device(config["device"])
                 if config["output_mode"] == "upscale":
                     scale = UPSCALE_STEPS[config["scale"]]
-                elif config.get("resize_mode") == "ai_expand":
-                    work_w, work_h = self._ai_canvas_dimensions(item["size"], target_size)
-                    scale = self._model_scale_for_dimensions(work_w, work_h, target_size)
                 else:
                     scale = self._model_scale_for(item, target_size)
                 face_enabled = bool(config["face_recovery"])
@@ -1997,16 +2104,23 @@ class ArmAIApp:
         return 2 if required <= 2 else (4 if required <= 4 else 8)
 
     @staticmethod
-    def _ai_canvas_dimensions(source_size, target_size):
-        source_w, source_h = source_size
-        target_ratio = target_size[0] / target_size[1]
-        source_ratio = source_w / source_h
-        if target_ratio > source_ratio:
-            canvas_w, canvas_h = max(source_w, round(source_h * target_ratio)), source_h
+    def _filename_dimension(value):
+        text = f"{float(value):.4f}".rstrip("0").rstrip(".")
+        return text.replace(".", "p")
+
+    def _output_filename(self, base, item, target_size, dpi):
+        config = item.get("config", {})
+        if config.get("output_mode", "print") == "upscale":
+            suffix = config.get("scale", "4x")
         else:
-            canvas_w, canvas_h = source_w, max(source_h, round(source_w / target_ratio))
-        shrink = min(1.0, 2048 / max(canvas_w, canvas_h))
-        return max(1, round(canvas_w * shrink)), max(1, round(canvas_h * shrink))
+            if config.get("unit", "cm") == "px":
+                width, height = target_size
+            else:
+                width = config.get("width", "")
+                height = config.get("height", "")
+            suffix = (f"{self._filename_dimension(width)}x{self._filename_dimension(height)}"
+                      f"{config.get('unit', 'cm')}{dpi}DPI")
+        return f"{base}-{suffix}.png"
 
     def _enhance_worker(self, jobs):
         completed, failures, cancelled = [], [], []
@@ -2018,7 +2132,7 @@ class ArmAIApp:
                 engine = engines[device]
                 source = item["path"]
                 base = os.path.splitext(os.path.basename(source))[0]
-                output_file = os.path.join(os.path.dirname(source), f"{base}_ARM_AI_{scale}x.png")
+                output_file = os.path.join(os.path.dirname(source), self._output_filename(base, item, target_size, dpi))
                 if self._is_cancelled(item):
                     cancelled.append(os.path.basename(source))
                     self.root.after(0, lambda i=item: self._mark_item_cancelled(i))
@@ -2045,18 +2159,6 @@ class ArmAIApp:
                             raise InterruptedError("Processing stopped by user")
                         source_for_engine = face_path
                         self._post_item_progress(item, 28)
-                    if resize_mode == "ai_expand":
-                        import tempfile
-                        fd, expanded_path = tempfile.mkstemp(prefix=f"{base}_ARM_AI_expand_", suffix=".png", dir=os.path.dirname(source))
-                        os.close(fd)
-                        os.remove(expanded_path)
-                        temporary_files.append(expanded_path)
-                        self.root.after(0, lambda: self._set_status("expanding"))
-                        self._post_item_progress(item, 30)
-                        self._outpaint_source(source_for_engine, expanded_path, target_size,
-                                              cancel_check=lambda i=item: self._is_cancelled(i))
-                        source_for_engine = expanded_path
-                        self._post_item_progress(item, 34)
                     if scale == 8:
                         import tempfile
                         fd, temp_file = tempfile.mkstemp(prefix=f"{base}_ARM_AI_8x_stage_", suffix=".png", dir=os.path.dirname(source))
@@ -2120,37 +2222,24 @@ class ArmAIApp:
                 self.root.after(0, lambda i=item: self._mark_item_failed(i))
             self.root.after(0, lambda error=str(exc): self._finish_error(error))
 
-    def _outpaint_source(self, source_path, output_path, target_size, cancel_check=lambda: False):
-        """Expand the source canvas to the requested aspect ratio with LaMa inpainting."""
-        with Image.open(source_path) as image:
-            source = ImageOps.exif_transpose(image).convert("RGB")
-        canvas_w, canvas_h = self._ai_canvas_dimensions(source.size, target_size)
-        # LaMa's full-resolution inference can exhaust memory on large photos.
-        # Its model is resolution robust; let Real-ESRGAN upscale this preview-sized canvas afterward.
-        if canvas_w < source.width or canvas_h < source.height:
-            shrink = min(canvas_w / source.width, canvas_h / source.height)
-            source = source.resize((max(1, round(source.width * shrink)), max(1, round(source.height * shrink))), Image.Resampling.LANCZOS)
-            canvas_w = max(canvas_w, source.width)
-            canvas_h = max(canvas_h, source.height)
-        left, top = (canvas_w - source.width) // 2, (canvas_h - source.height) // 2
-        canvas = Image.new("RGB", (canvas_w, canvas_h), "white")
-        canvas.paste(source, (left, top))
-        mask = Image.new("L", (canvas_w, canvas_h), 255)
-        mask.paste(0, (left, top, left + source.width, top + source.height))
-        if cancel_check():
-            raise InterruptedError("Processing stopped by user")
-        bundled_model = application_resource_root() / "models" / "big-lama.pt"
-        if bundled_model.is_file():
-            os.environ["LAMA_MODEL"] = str(bundled_model)
-        from simple_lama_inpainting import SimpleLama
-        filled = SimpleLama()(canvas, mask).convert("RGB").crop((0, 0, canvas_w, canvas_h))
-        # Keep the original subject pixels intact; AI output is used only for the new margins.
-        filled.paste(source, (left, top))
-        filled.save(output_path, format="PNG")
+    def _open_output_folder(self, item):
+        output_path = item.get("output_path")
+        if not output_path or not os.path.isfile(output_path):
+            return
+        folder = os.path.dirname(output_path)
+        try:
+            if os.name == "nt":
+                os.startfile(folder)
+            else:
+                import subprocess
+                subprocess.Popen(["xdg-open", folder])
+        except (OSError, AttributeError) as exc:
+            messagebox.showerror(self.t("เปิดโฟลเดอร์ผลลัพธ์"), str(exc))
 
     def _mark_item_complete(self, item, output_file, dpi):
         item["output_path"] = output_file
         item["output_dpi"] = dpi
+        item["open_folder_button"].configure(state="normal")
         self._refresh_batch_rows()
 
     def _finish_batch(self, completed, failures, cancelled=None):
@@ -2257,13 +2346,13 @@ def main():
             return
         stage["visible"] = not stage["visible"]
         loading_var.set(translate("กำลังเปิดโปรแกรม…") if stage["visible"] else "")
-        stage["after"] = root.after(1000, blink_final_status)
+        stage["after"] = root.after(300, blink_final_status)
 
     def begin_final_status():
         stage["final"] = True
         stage["visible"] = True
         loading_var.set(translate("กำลังเปิดโปรแกรม…"))
-        stage["after"] = root.after(1000, blink_final_status)
+        stage["after"] = root.after(300, blink_final_status)
         maybe_finish_startup()
 
     def advance_startup_status():

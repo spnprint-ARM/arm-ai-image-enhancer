@@ -22,9 +22,6 @@ hiddenimports = [
     'realesrgan.archs.srvgg_arch',
     'gfpgan.archs.gfpganv1_clean_arch',
     'facexlib.utils.face_restoration_helper',
-    'simple_lama_inpainting',
-    'simple_lama_inpainting.models.model',
-    'simple_lama_inpainting.utils.util',
 ]
 for package in (
     'basicsr.archs', 'basicsr.losses', 'basicsr.models',
@@ -33,7 +30,6 @@ for package in (
 ):
     hiddenimports += collect_submodules(package)
 hiddenimports += collect_submodules('facexlib.detection')
-hiddenimports += collect_submodules('simple_lama_inpainting')
 
 # The bundled build runtime keeps tkinter/Tcl outside site-packages. Explicitly
 # expose them to Analysis so a failed Tcl/Tk probe cannot silently omit the GUI.
@@ -150,3 +146,11 @@ coll = COLLECT(
     upx_exclude=[],
     name='ArmAIImageEnhancer',
 )
+
+# Keep human-readable notices beside the application executable.
+# This runs only when a future build is explicitly requested.
+import shutil
+notices_source = Path('C:/ArmAI')
+notices_output = Path(coll.name)
+shutil.copytree(notices_source / 'licenses', notices_output / 'licenses', dirs_exist_ok=True)
+shutil.copy2(notices_source / 'THIRD_PARTY_NOTICES.txt', notices_output / 'THIRD_PARTY_NOTICES.txt')

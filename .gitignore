@@ -15,3 +15,7 @@ installer/*.dat*
 installer/*.zip
 installer/*.new
 installer/*.previous
+
+installer/validation-v227/
+
+installer/fixed-v227/

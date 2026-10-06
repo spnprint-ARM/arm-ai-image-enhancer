@@ -1,0 +1,865 @@
+{
+  "schema_version": 1,
+  "components": [
+    {
+      "id": "realesrgan",
+      "name": "Real-ESRGAN",
+      "version": "0.3.0",
+      "license": "BSD-3-Clause",
+      "author": "Xintao Wang and contributors",
+      "source": "https://github.com/xinntao/Real-ESRGAN",
+      "license_files": [
+        "licenses/realesrgan/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "gfpgan",
+      "name": "GFPGAN",
+      "version": "1.3.8",
+      "license": "Apache-2.0",
+      "author": "Xintao Wang, Yu Li, Honglun Zhang, Ying Shan / Tencent ARC",
+      "source": "https://github.com/TencentARC/GFPGAN",
+      "license_files": [
+        "licenses/gfpgan/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "torch",
+      "name": "PyTorch",
+      "version": "2.11.0+cu128",
+      "license": "BSD-3-Clause (plus bundled third-party terms)",
+      "author": "PyTorch contributors",
+      "source": "https://github.com/pytorch/pytorch",
+      "license_files": [
+        "licenses/torch/LICENSE",
+        "licenses/torch/NOTICE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "torchvision",
+      "name": "TorchVision",
+      "version": "0.26.0+cu128",
+      "license": "BSD-3-Clause",
+      "author": "PyTorch contributors",
+      "source": "https://github.com/pytorch/vision",
+      "license_files": [
+        "licenses/torchvision/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "basicsr",
+      "name": "BasicSR",
+      "version": "1.4.2",
+      "license": "Apache-2.0",
+      "author": "Xintao Wang and contributors",
+      "source": "https://github.com/XPixelGroup/BasicSR",
+      "license_files": [
+        "licenses/basicsr/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "facexlib",
+      "name": "facexlib",
+      "version": "0.3.0",
+      "license": "MIT",
+      "author": "Xintao Wang and contributors",
+      "source": "https://github.com/xinntao/facexlib",
+      "license_files": [
+        "licenses/facexlib/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "numpy",
+      "name": "numpy",
+      "version": "2.5.2",
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "author": "Travis E. Oliphant et al.",
+      "source": "https://github.com/numpy/numpy",
+      "license_files": [
+        "licenses/numpy/licenses/LICENSE.txt",
+        "licenses/numpy/licenses/numpy/ma/LICENSE",
+        "licenses/numpy/licenses/numpy/random/LICENSE.md",
+        "licenses/numpy/licenses/numpy/fft/pocketfft/LICENSE.md",
+        "licenses/numpy/licenses/numpy/_core/src/highway/LICENSE",
+        "licenses/numpy/licenses/numpy/random/src/pcg64/LICENSE.md",
+        "licenses/numpy/licenses/numpy/random/src/sfc64/LICENSE.md",
+        "licenses/numpy/licenses/numpy/_core/src/umath/svml/LICENSE",
+        "licenses/numpy/licenses/numpy/random/src/philox/LICENSE.md",
+        "licenses/numpy/licenses/numpy/random/src/mt19937/LICENSE.md",
+        "licenses/numpy/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+        "licenses/numpy/licenses/numpy/random/src/splitmix64/LICENSE.md",
+        "licenses/numpy/licenses/numpy/random/src/distributions/LICENSE.md",
+        "licenses/numpy/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+        "licenses/numpy/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+        "licenses/numpy/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+        "licenses/numpy/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "pillow",
+      "name": "Pillow",
+      "version": "12.3.0",
+      "license": "MIT-CMU (plus bundled third-party terms)",
+      "author": "Pillow contributors / Secret Labs AB / Fredrik Lundh",
+      "source": "https://github.com/python-pillow/Pillow",
+      "license_files": [
+        "licenses/pillow/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "opencv-python",
+      "name": "OpenCV Python",
+      "version": "5.0.0.93",
+      "license": "Apache-2.0 (OpenCV); MIT (packaging); third-party terms",
+      "author": "OpenCV contributors and opencv-python maintainers",
+      "source": "https://github.com/opencv/opencv-python",
+      "license_files": [
+        "licenses/opencv-python/LICENSE.txt",
+        "licenses/opencv-python/LICENSE-3RD-PARTY.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "absl-py",
+      "name": "absl-py",
+      "version": "2.5.0",
+      "license": "Apache-2.0",
+      "author": "The Abseil Authors",
+      "source": "https://github.com/abseil/abseil-py",
+      "license_files": [
+        "licenses/absl-py/licenses/AUTHORS",
+        "licenses/absl-py/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "addict",
+      "name": "addict",
+      "version": "2.4.0",
+      "license": "MIT",
+      "author": "Mats Julian Olsen",
+      "source": "https://github.com/mewwts/addict",
+      "license_files": [
+        "licenses/addict/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "certifi",
+      "name": "certifi",
+      "version": "2026.7.22",
+      "license": "MPL-2.0",
+      "author": "Kenneth Reitz",
+      "source": "https://github.com/certifi/python-certifi",
+      "license_files": [
+        "licenses/certifi/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "charset-normalizer",
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "license": "MIT",
+      "author": "\"Ahmed R. TAHRI\" <tahri.ahmed@proton.me>",
+      "source": "https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md",
+      "license_files": [
+        "licenses/charset-normalizer/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "colorama",
+      "name": "colorama",
+      "version": "0.4.6",
+      "license": "BSD License",
+      "author": "Jonathan Hartley <tartley@tartley.com>",
+      "source": "https://github.com/tartley/colorama",
+      "license_files": [
+        "licenses/colorama/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "contourpy",
+      "name": "contourpy",
+      "version": "1.4.0",
+      "license": "BSD-3-Clause",
+      "author": "Ian Thomas <ianthomas23@gmail.com>",
+      "source": "https://github.com/contourpy/contourpy",
+      "license_files": [
+        "licenses/contourpy/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "cycler",
+      "name": "cycler",
+      "version": "0.12.1",
+      "license": "BSD License",
+      "author": "Thomas A Caswell <matplotlib-users@python.org>",
+      "source": "https://github.com/matplotlib/cycler",
+      "license_files": [
+        "licenses/cycler/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "filelock",
+      "name": "filelock",
+      "version": "3.32.3",
+      "license": "MIT",
+      "author": "filelock contributors",
+      "source": "https://github.com/tox-dev/py-filelock",
+      "license_files": [
+        "licenses/filelock/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "filterpy",
+      "name": "filterpy",
+      "version": "1.4.5",
+      "license": "MIT",
+      "author": "Roger Labbe",
+      "source": "https://github.com/rlabbe/filterpy",
+      "license_files": [
+        "licenses/filterpy/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "fonttools",
+      "name": "fonttools",
+      "version": "4.66.1",
+      "license": "MIT",
+      "author": "Just van Rossum",
+      "source": "http://github.com/fonttools/fonttools",
+      "license_files": [
+        "licenses/fonttools/licenses/LICENSE",
+        "licenses/fonttools/licenses/LICENSE.external"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "fsspec",
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "license": "BSD-3-Clause",
+      "author": "fsspec contributors",
+      "source": "https://filesystem-spec.readthedocs.io/en/latest/changelog.html",
+      "license_files": [
+        "licenses/fsspec/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "future",
+      "name": "future",
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": "Ed Schofield",
+      "source": "https://github.com/PythonCharmers/python-future",
+      "license_files": [
+        "licenses/future/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "grpcio",
+      "name": "grpcio",
+      "version": "1.84.0",
+      "license": "Apache-2.0",
+      "author": "The gRPC Authors <grpc-io@googlegroups.com>",
+      "source": "https://github.com/grpc/grpc",
+      "license_files": [
+        "licenses/grpcio/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "idna",
+      "name": "idna",
+      "version": "3.20",
+      "license": "BSD-3-Clause",
+      "author": "Kim Davies <kim+pypi@gumleaf.org>",
+      "source": "https://github.com/kjd/idna",
+      "license_files": [
+        "licenses/idna/licenses/LICENSE.md"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "imageio",
+      "name": "ImageIO",
+      "version": "2.38.0",
+      "license": "BSD-2-Clause",
+      "author": "ImageIO contributors",
+      "source": "https://github.com/imageio/imageio",
+      "license_files": [
+        "licenses/imageio/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "jinja2",
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "license": "BSD License",
+      "author": "Jinja2 contributors",
+      "source": "https://github.com/pallets/jinja/",
+      "license_files": [
+        "licenses/jinja2/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "kiwisolver",
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "license": "BSD License",
+      "author": "The Nucleic Development Team <sccolbert@gmail.com>",
+      "source": "https://github.com/nucleic/kiwi",
+      "license_files": [
+        "licenses/kiwisolver/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "lazy-loader",
+      "name": "lazy-loader",
+      "version": "0.6",
+      "license": "BSD-3-Clause",
+      "author": "Scientific Python Developers",
+      "source": "https://github.com/scientific-python/lazy-loader",
+      "license_files": [
+        "licenses/lazy-loader/licenses/LICENSE.md"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "llvmlite",
+      "name": "llvmlite",
+      "version": "0.50.0",
+      "license": "BSD-2-Clause AND Apache-2.0 WITH LLVM-exception",
+      "author": "llvmlite contributors",
+      "source": "https://github.com/numba/llvmlite",
+      "license_files": [
+        "licenses/llvmlite/licenses/LICENSE",
+        "licenses/llvmlite/licenses/LICENSE.thirdparty"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "lmdb",
+      "name": "lmdb",
+      "version": "2.3.0",
+      "license": "OLDAP-2.8",
+      "author": "David Wilson",
+      "source": "http://github.com/jnwatson/py-lmdb/",
+      "license_files": [
+        "licenses/lmdb/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "markdown",
+      "name": "Markdown",
+      "version": "3.11",
+      "license": "BSD-3-Clause",
+      "author": "Manfred Stienstra, Yuri Takhteyev",
+      "source": "https://github.com/Python-Markdown/markdown",
+      "license_files": [
+        "licenses/markdown/licenses/LICENSE.md"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "markupsafe",
+      "name": "MarkupSafe",
+      "version": "3.0.3",
+      "license": "BSD-3-Clause",
+      "author": "MarkupSafe contributors",
+      "source": "https://github.com/pallets/markupsafe/",
+      "license_files": [
+        "licenses/markupsafe/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "matplotlib",
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "license": "MIT",
+      "author": "John D. Hunter, Michael Droettboom",
+      "source": "https://github.com/matplotlib/matplotlib",
+      "license_files": [
+        "licenses/matplotlib/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "mpmath",
+      "name": "mpmath",
+      "version": "1.3.0",
+      "license": "BSD",
+      "author": "Fredrik Johansson",
+      "source": "https://github.com/fredrik-johansson/mpmath",
+      "license_files": [
+        "licenses/mpmath/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "networkx",
+      "name": "networkx",
+      "version": "3.6.1",
+      "license": "BSD-3-Clause",
+      "author": "Aric Hagberg <hagberg@lanl.gov>",
+      "source": "https://github.com/networkx/networkx",
+      "license_files": [
+        "licenses/networkx/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "numba",
+      "name": "numba",
+      "version": "0.68.0",
+      "license": "MIT",
+      "author": "numba contributors",
+      "source": "https://numba.pydata.org",
+      "license_files": [
+        "licenses/numba/licenses/LICENSE",
+        "licenses/numba/licenses/LICENSES.third-party"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "packaging",
+      "name": "packaging",
+      "version": "26.3",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "author": "Donald Stufft <donald@stufft.io>",
+      "source": "https://github.com/pypa/packaging",
+      "license_files": [
+        "licenses/packaging/licenses/LICENSE",
+        "licenses/packaging/licenses/LICENSE.BSD",
+        "licenses/packaging/licenses/LICENSE.APACHE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "platformdirs",
+      "name": "platformdirs",
+      "version": "4.12.2",
+      "license": "MIT",
+      "author": "platformdirs contributors",
+      "source": "https://github.com/tox-dev/platformdirs",
+      "license_files": [
+        "licenses/platformdirs/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "protobuf",
+      "name": "protobuf",
+      "version": "7.36.2",
+      "license": "3-Clause BSD License",
+      "author": "protobuf@googlegroups.com",
+      "source": "https://developers.google.com/protocol-buffers/",
+      "license_files": [
+        "licenses/protobuf/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "pyparsing",
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "license": "MIT",
+      "author": "Paul McGuire <ptmcg.gm+pyparsing@gmail.com>",
+      "source": "https://github.com/pyparsing/pyparsing.git",
+      "license_files": [
+        "licenses/pyparsing/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "python-dateutil",
+      "name": "python-dateutil",
+      "version": "2.9.0.post0",
+      "license": "Apache-2.0",
+      "author": "Gustavo Niemeyer",
+      "source": "https://github.com/dateutil/dateutil",
+      "license_files": [
+        "licenses/python-dateutil/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "pyyaml",
+      "name": "PyYAML",
+      "version": "6.0.3",
+      "license": "MIT",
+      "author": "Kirill Simonov",
+      "source": "https://github.com/yaml/pyyaml",
+      "license_files": [
+        "licenses/pyyaml/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "requests",
+      "name": "requests",
+      "version": "2.34.2",
+      "license": "Apache-2.0",
+      "author": "Kenneth Reitz <me@kennethreitz.org>",
+      "source": "https://github.com/psf/requests",
+      "license_files": [
+        "licenses/requests/licenses/LICENSE",
+        "licenses/requests/licenses/NOTICE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "scikit-image",
+      "name": "scikit-image",
+      "version": "0.26.0",
+      "license": "MIT",
+      "author": "scikit-image contributors",
+      "source": "https://github.com/scikit-image/scikit-image",
+      "license_files": [
+        "licenses/scikit-image/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "scipy",
+      "name": "scipy",
+      "version": "1.18.1",
+      "license": "BSD License",
+      "author": "scipy contributors",
+      "source": "https://github.com/scipy/scipy",
+      "license_files": [
+        "licenses/scipy/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "setuptools",
+      "name": "setuptools",
+      "version": "78.1.0",
+      "license": "MIT",
+      "author": "Python Packaging Authority <distutils-sig@python.org>",
+      "source": "https://github.com/pypa/setuptools",
+      "license_files": [
+        "licenses/setuptools/LICENSE",
+        "licenses/setuptools/LICENSE.BSD",
+        "licenses/setuptools/LICENSE.txt",
+        "licenses/setuptools/LICENSE.APACHE",
+        "licenses/setuptools/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "six",
+      "name": "six",
+      "version": "1.17.0",
+      "license": "MIT",
+      "author": "Benjamin Peterson",
+      "source": "https://github.com/benjaminp/six",
+      "license_files": [
+        "licenses/six/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "sympy",
+      "name": "sympy",
+      "version": "1.14.0",
+      "license": "MIT",
+      "author": "SymPy development team",
+      "source": "https://github.com/sympy/sympy",
+      "license_files": [
+        "licenses/sympy/licenses/AUTHORS",
+        "licenses/sympy/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "tb-nightly",
+      "name": "tb-nightly",
+      "version": "2.21.0a20251023",
+      "license": "MIT",
+      "author": "Google Inc.",
+      "source": "https://github.com/tensorflow/tensorboard",
+      "license_files": [
+        "licenses/tb-nightly/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "tensorboard-data-server",
+      "name": "tensorboard-data-server",
+      "version": "0.7.2",
+      "license": "Apache-2.0",
+      "author": "Google Inc.",
+      "source": "https://github.com/tensorflow/tensorboard/tree/master/tensorboard/data/server",
+      "license_files": [
+        "licenses/tensorboard-data-server/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "tifffile",
+      "name": "tifffile",
+      "version": "2026.9.20",
+      "license": "BSD-3-Clause",
+      "author": "Christoph Gohlke",
+      "source": "https://github.com/cgohlke/tifffile",
+      "license_files": [
+        "licenses/tifffile/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "tqdm",
+      "name": "tqdm",
+      "version": "4.70.1",
+      "license": "MPL-2.0 AND MIT",
+      "author": "tqdm contributors",
+      "source": "https://github.com/tqdm/tqdm",
+      "license_files": [
+        "licenses/tqdm/licenses/LICENCE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "typing-extensions",
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "license": "PSF-2.0",
+      "author": "\"Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee\" <levkivskyi@gmail.com>",
+      "source": "https://github.com/python/typing_extensions",
+      "license_files": [
+        "licenses/typing-extensions/licenses/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "urllib3",
+      "name": "urllib3",
+      "version": "2.8.0",
+      "license": "MIT",
+      "author": "Andrey Petrov <andrey.petrov@shazow.net>",
+      "source": "https://github.com/urllib3/urllib3/blob/main/CHANGES.rst",
+      "license_files": [
+        "licenses/urllib3/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "werkzeug",
+      "name": "Werkzeug",
+      "version": "3.1.9",
+      "license": "BSD-3-Clause",
+      "author": "Werkzeug contributors",
+      "source": "https://github.com/pallets/werkzeug/",
+      "license_files": [
+        "licenses/werkzeug/licenses/LICENSE.txt"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "yapf",
+      "name": "yapf",
+      "version": "0.43.0",
+      "license": "Apache-2.0",
+      "author": "Google Inc.",
+      "source": "https://github.com/google/yapf",
+      "license_files": [
+        "licenses/yapf/AUTHORS",
+        "licenses/yapf/LICENSE"
+      ],
+      "kind": "library",
+      "notes": ""
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "version": "3.12.10",
+      "license": "PSF-2.0 and historical licenses",
+      "author": "Python Software Foundation and contributors",
+      "source": "https://www.python.org/",
+      "license_files": [
+        "licenses/python/LICENSE.txt"
+      ],
+      "kind": "runtime",
+      "notes": ""
+    },
+    {
+      "id": "tcl",
+      "name": "Tcl",
+      "version": "8.6.15",
+      "license": "Tcl/Tk license",
+      "author": "Regents of the University of California, Sun Microsystems, Scriptics, ActiveState and contributors",
+      "source": "https://github.com/tcltk/tcl",
+      "license_files": [
+        "licenses/tcl/LICENSE.txt"
+      ],
+      "kind": "runtime",
+      "notes": ""
+    },
+    {
+      "id": "tk",
+      "name": "Tk",
+      "version": "8.6.15",
+      "license": "Tcl/Tk license",
+      "author": "Regents of the University of California, Sun Microsystems, Scriptics, ActiveState and contributors",
+      "source": "https://github.com/tcltk/tk",
+      "license_files": [
+        "licenses/tk/license.terms"
+      ],
+      "kind": "runtime",
+      "notes": ""
+    },
+    {
+      "id": "realesrgan-x4plus",
+      "name": "RealESRGAN_x4plus",
+      "version": "v0.1.0 release / x4plus",
+      "license": "BSD-3-Clause (upstream project)",
+      "author": "Xintao Wang and Real-ESRGAN contributors",
+      "source": "https://github.com/xinntao/Real-ESRGAN/releases/tag/v0.1.0",
+      "license_files": [
+        "licenses/realesrgan/LICENSE"
+      ],
+      "kind": "model",
+      "model_file": "models/RealESRGAN_x4plus.pth",
+      "sha256": "4fa0d38905f75ac06eb49a7951b426670021be3018265fd191d2125df9d682f1",
+      "notes": "The checkpoint is distributed by the upstream project. Its project license is included; no separate checkpoint-specific license was identified."
+    },
+    {
+      "id": "gfpgan-v14",
+      "name": "GFPGANv1.4",
+      "version": "1.4",
+      "license": "Apache-2.0 (upstream project)",
+      "author": "Tencent ARC / GFPGAN contributors",
+      "source": "https://github.com/TencentARC/GFPGAN/releases/tag/v1.3.0",
+      "license_files": [
+        "licenses/gfpgan/LICENSE"
+      ],
+      "kind": "model",
+      "model_file": "models/face/GFPGANv1.4.pth",
+      "sha256": "e2cd4703ab14f4d01fd1383a8a8b266f9a5833dacee8e6a79d3bf21a1b6be5ad",
+      "notes": "The model name is v1.4; its hosting release tag is v1.3.0. The project license is included; no separate checkpoint-specific license was identified."
+    },
+    {
+      "id": "retinaface-resnet50",
+      "name": "RetinaFace ResNet50",
+      "version": "facexlib v0.1.0 release",
+      "license": "MIT (code; checkpoint terms not separately stated)",
+      "author": "Jiankang Deng, biubug6 / Pytorch_Retinaface contributors; packaged by Xintao Wang",
+      "source": "https://github.com/xinntao/facexlib/releases/tag/v0.1.0",
+      "license_files": [
+        "licenses/pytorch-retinaface/LICENSE.txt",
+        "licenses/facexlib/LICENSE"
+      ],
+      "kind": "model",
+      "model_file": "models/face/detection_Resnet50_Final.pth",
+      "sha256": "6d1de9c2944f2ccddca5f5e010ea5ae64a39845a86311af6fdf30841b0a5a16d",
+      "notes": "Source implementation: https://github.com/biubug6/Pytorch_Retinaface. Release does not state a separate checkpoint license."
+    },
+    {
+      "id": "parsenet",
+      "name": "ParseNet face parsing",
+      "version": "facexlib v0.2.2 release",
+      "license": "MIT (facexlib); CC-BY-NC-SA-4.0 (PSFR-GAN source)",
+      "author": "Chaofeng Chen / PSFR-GAN contributors; adapted by Xintao Wang / facexlib",
+      "source": "https://github.com/xinntao/facexlib/releases/tag/v0.2.2",
+      "license_files": [
+        "licenses/facexlib/LICENSE",
+        "licenses/psfrgan/LICENSE.txt"
+      ],
+      "kind": "model",
+      "model_file": "models/face/parsing_parsenet.pth",
+      "sha256": "3d558d8d0e42c20224f13cf5a29c79eba2d59913419f945545d8cf7b72920de2",
+      "notes": "facexlib/parsing/parsenet.py says it is modified from https://github.com/chaofengc/PSFRGAN, whose source license is CC-BY-NC-SA-4.0. The checkpoint release does not separately state its license. Library and model terms must not be treated as interchangeable."
+    },
+    {
+      "id": "psfrgan-source",
+      "name": "PSFR-GAN / ParseNet source",
+      "version": "upstream source; no version declared",
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Chaofeng Chen and contributors",
+      "source": "https://github.com/chaofengc/PSFRGAN",
+      "license_files": [
+        "licenses/psfrgan/LICENSE.txt"
+      ],
+      "kind": "source",
+      "notes": "ParseNet in facexlib identifies this project as its source. This credit concerns source code; checkpoint licensing is listed separately."
+    }
+  ]
+}

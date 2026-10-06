@@ -4,6 +4,7 @@ param(
     [string]$BuildRoot = 'D:\ArmAI_Build\release',
     [string]$Output = '',
     [string]$IconPath = "$PSScriptRoot\ARM.ico",
+    [string]$LanguageIcon = "$PSScriptRoot\..\assets\lang.png",
     [string]$Version = '',
     [switch]$ReusePayload,
     [string]$ReusePayloadPath = ''
@@ -20,6 +21,7 @@ $Uninstaller = Join-Path $BuildRoot 'Uninstall.exe'
 if (!(Test-Path $Compiler)) { throw "C# compiler not found: $Compiler" }
 if (!(Test-Path $Python)) { throw "Python runtime not found: $Python" }
 if (!(Test-Path -LiteralPath $IconPath)) { throw "Setup icon not found: $IconPath" }
+if (!(Test-Path -LiteralPath $LanguageIcon)) { throw "Language icon not found: $LanguageIcon" }
 if (!$Version) { $Version = (Get-Content -LiteralPath $VersionFile -Raw).Trim() }
 if ($Version -notmatch '^\d+\.\d+\.\d+$') { throw "Version must use major.minor.patch format: $Version" }
 if (!$Output) { $Output = Join-Path $PSScriptRoot "setup-V.$Version.exe" }
@@ -40,14 +42,17 @@ if ($ReusePayload) {
     if (Test-Path $Stage) { Remove-Item -LiteralPath $Stage -Recurse -Force }
     New-Item -ItemType Directory -Force -Path $Stage | Out-Null
     Copy-Item -Path (Join-Path $Dist '*') -Destination $Stage -Recurse -Force
-    & $Compiler /nologo /target:winexe /platform:x64 /optimize+ "/win32manifest:$Manifest" "/win32icon:$IconPath" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll "/out:$Uninstaller" $SetupSource $VersionInfo
+    $ProjectRoot = Split-Path -Parent $PSScriptRoot
+    Copy-Item -LiteralPath (Join-Path $ProjectRoot 'licenses') -Destination $Stage -Recurse -Force
+    Copy-Item -LiteralPath (Join-Path $ProjectRoot 'THIRD_PARTY_NOTICES.txt') -Destination $Stage -Force
+    & $Compiler /nologo /target:winexe /platform:x64 /optimize+ "/win32manifest:$Manifest" "/win32icon:$IconPath" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll "/resource:$LanguageIcon,lang.png" "/out:$Uninstaller" $SetupSource $VersionInfo
     if ($LASTEXITCODE -ne 0) { throw 'Uninstaller compilation failed.' }
     Copy-Item -LiteralPath $Uninstaller -Destination (Join-Path $Stage 'Uninstall.exe') -Force
     if (Test-Path $PayloadZip) { Remove-Item -LiteralPath $PayloadZip -Force }
     & $Python (Join-Path $PSScriptRoot 'make_payload.py') $Stage $PayloadZip
     if ($LASTEXITCODE -ne 0) { throw 'Payload archive creation failed.' }
 }
-& $Compiler /nologo /target:winexe /platform:x64 /optimize+ "/win32manifest:$Manifest" "/win32icon:$IconPath" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll "/out:$Stub" $SetupSource $VersionInfo
+& $Compiler /nologo /target:winexe /platform:x64 /optimize+ "/win32manifest:$Manifest" "/win32icon:$IconPath" /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.IO.Compression.dll /reference:System.IO.Compression.FileSystem.dll "/resource:$LanguageIcon,lang.png" "/out:$Stub" $SetupSource $VersionInfo
 if ($LASTEXITCODE -ne 0) { throw 'Installer stub compilation failed.' }
 $Output = [IO.Path]::GetFullPath($Output)
 $OutputParent = Split-Path -Parent $Output

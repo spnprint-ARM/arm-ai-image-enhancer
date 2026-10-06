@@ -388,9 +388,9 @@ internal static class Setup
             ClientSize = new Size(470, 175);
             int selectedLanguage = GetSavedLanguageIndex();
 
-            Label languageLabel = new Label { Left = 16, Top = 16, Width = 70, Height = 25 };
-            SetLocalized(languageLabel, "ภาษา", selectedLanguage);
-            language = new ComboBox { Left = 88, Top = 12, Width = 150, DropDownStyle = ComboBoxStyle.DropDownList };
+            PictureBox languageIcon = CreateLanguageIcon(16, 12);
+            language = new ComboBox { Left = 50, Top = 15, Width = 150, DropDownStyle = ComboBoxStyle.DropDownList };
+            FormClosed += delegate { if (languageIcon.Image != null) languageIcon.Image.Dispose(); };
             language.Items.AddRange(new object[] { "ไทย", "English", "简体中文", "Français" });
             language.SelectedIndex = selectedLanguage;
             language.SelectedIndexChanged += delegate
@@ -408,7 +408,7 @@ internal static class Setup
             SetLocalized(yes, "ถอนการติดตั้ง", selectedLanguage);
             Button no = new Button { Left = 360, Top = 128, Width = 90, Height = 30, DialogResult = DialogResult.No };
             SetLocalized(no, "ยกเลิก", selectedLanguage);
-            Controls.Add(languageLabel);
+            Controls.Add(languageIcon);
             Controls.Add(language);
             Controls.Add(prompt);
             Controls.Add(removeProfile);
@@ -417,6 +417,18 @@ internal static class Setup
             AcceptButton = yes;
             CancelButton = no;
         }
+    }
+
+    private static PictureBox CreateLanguageIcon(int left, int top)
+    {
+        PictureBox icon = new PictureBox { Left = left, Top = top, Width = 28, Height = 28,
+            SizeMode = PictureBoxSizeMode.Zoom };
+        using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("lang.png"))
+        {
+            if (stream != null)
+                using (Image image = Image.FromStream(stream)) icon.Image = new Bitmap(image);
+        }
+        return icon;
     }
 
     private static int GetSavedLanguageIndex()
@@ -485,6 +497,7 @@ internal static class Setup
         private readonly CheckBox launchAfterInstall;
         private readonly Label title;
         private readonly ComboBox languageSelector;
+        private readonly PictureBox languageIcon;
         private int LanguageIndex { get { return languageSelector == null ? 0 : Math.Max(0, languageSelector.SelectedIndex); } }
         private int activeInstallLanguage;
         private volatile bool cancelRequested;
@@ -508,6 +521,7 @@ internal static class Setup
             MinimizeBox = false;
             StartPosition = FormStartPosition.CenterScreen;
             ClientSize = new Size(790, 570);
+            AutoScroll = true;
 
             PictureBox brandIcon = new PictureBox { Left = 22, Top = 16, Width = 36, Height = 36,
                 SizeMode = PictureBoxSizeMode.Zoom, Image = Icon.ExtractAssociatedIcon(Application.ExecutablePath).ToBitmap() };
@@ -516,13 +530,12 @@ internal static class Setup
                 Font = new Font("Tahoma", 16, FontStyle.Bold), TextAlign = ContentAlignment.MiddleLeft };
             SetLocalized(title, "ติดตั้ง ARM AI Image Enhancer V.", 0);
             Controls.Add(title);
-            Label languageLabel = new Label { Left = 548, Top = 19, Width = 65, Height = 24, Font = new Font("Tahoma", 9) };
-            SetLocalized(languageLabel, "ภาษา", 0);
-            languageSelector = new ComboBox { Left = 612, Top = 15, Width = 158, Height = 28, DropDownStyle = ComboBoxStyle.DropDownList };
+            languageIcon = CreateLanguageIcon(568, 15);
+languageSelector = new ComboBox { Left = 602, Top = 15, Width = 168, Height = 28, DropDownStyle = ComboBoxStyle.DropDownList };
             languageSelector.Items.AddRange(new object[] { "ไทย", "English", "简体中文", "Français" });
             languageSelector.SelectedIndex = 0;
             languageSelector.SelectedIndexChanged += delegate { ApplyLanguage(); };
-            Controls.Add(languageLabel);
+            Controls.Add(languageIcon);
             Controls.Add(languageSelector);
             Label intro = new Label { Left = 22, Top = 56, Width = 510, Height = 42, Font = new Font("Tahoma", 10), AutoSize = false };
             SetLocalized(intro, "โปรดตรวจสอบพื้นที่และรายละเอียดก่อนเริ่มติดตั้ง โปรแกรมจะติดตั้งลงใน C:\\Program Files\\ArmAI\\ImageEnhancer", 0);
@@ -589,6 +602,7 @@ internal static class Setup
             {
                 if (qrImage != null) qrImage.Dispose();
                 if (brandIcon.Image != null) brandIcon.Image.Dispose();
+                if (languageIcon.Image != null) languageIcon.Image.Dispose();
             };
             FormClosing += delegate(object sender, FormClosingEventArgs e)
             {
@@ -612,12 +626,28 @@ internal static class Setup
             double setupGb = new FileInfo(Application.ExecutablePath).Length / 1000000000.0;
             string key = spaceInfo.Tag as string;
             spaceInfo.Text = String.Format(Translate(key, language), available, requiredGb, installGb, requiredGb + setupGb, setupGb);
+            LayoutSpaceDetails();
             SizeF moodSize;
             using (Graphics graphics = CreateGraphics()) moodSize = graphics.MeasureString(qrMood.Text, qrMood.Font);
             int moodWidth = Math.Min(220, (int)Math.Ceiling(moodSize.Width));
             qrMood.Left = 550 + (220 - moodWidth) / 2;
             qrMood.Width = moodWidth;
             qrSmile.Left = Math.Min(766, qrMood.Left + moodWidth + 1);
+        }
+
+        private void LayoutSpaceDetails()
+        {
+            // Measure wrapped text using the label renderer for each language and DPI.
+            int height = Math.Max(84, spaceInfo.GetPreferredSize(new Size(spaceInfo.Width, 0)).Height + 8);
+            int extra = height - 84;
+            spaceInfo.Height = height;
+            message.Top = 391 + extra;
+            progress.Top = 420 + extra;
+            desktopShortcut.Top = 490 + extra;
+            launchAfterInstall.Top = 517 + extra;
+            installButton.Top = cancelButton.Top = 520 + extra;
+            ClientSize = new Size(790, 570 + extra);
+            AutoScrollMinSize = new Size(790, 570 + extra);
         }
 
         private void RequestCancel()
@@ -670,8 +700,8 @@ internal static class Setup
 
         private void Install()
         {
-            string tempRoot = Path.Combine(Path.GetTempPath(), "ArmAIImageEnhancer");
-            string stage = Path.Combine(tempRoot, "install_" + Guid.NewGuid().ToString("N"));
+            // A sibling inherits install-parent permissions and stays on the target volume.
+            string stage = target + ".__staging_" + Guid.NewGuid().ToString("N");
             string backup = target + ".__previous_" + Guid.NewGuid().ToString("N");
             bool oldMoved = false;
             bool newMoved = false;
@@ -680,7 +710,6 @@ internal static class Setup
             try
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(target));
-                Directory.CreateDirectory(tempRoot);
                 Directory.CreateDirectory(stage);
                 ThrowIfCancellationRequested();
                 using (PayloadStream payload = new PayloadStream(Assembly.GetExecutingAssembly().Location))
@@ -717,18 +746,19 @@ internal static class Setup
 
                 SetProgress(Translate("กำลังย้ายไฟล์จากโฟลเดอร์ชั่วคราว…", activeInstallLanguage), 99);
                 ThrowIfCancellationRequested();
-                if (Directory.Exists(target)) { Directory.Move(target, backup); oldMoved = true; }
+                if (Directory.Exists(target)) { RetryFileOperation(delegate { Directory.Move(target, backup); }); oldMoved = true; }
                 ThrowIfCancellationRequested();
-                if (String.Equals(Path.GetPathRoot(stage), Path.GetPathRoot(target), StringComparison.OrdinalIgnoreCase))
+                try
                 {
-                    Directory.Move(stage, target);
+                    RetryFileOperation(delegate { Directory.Move(stage, target); });
                 }
-                else
+                catch (IOException)
                 {
-                    newMoved = true;
-                    CopyDirectory(stage, target);
-                    ThrowIfCancellationRequested();
-                    DeleteTree(stage);
+                    CopyStagedInstallation(stage, ref newMoved);
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    CopyStagedInstallation(stage, ref newMoved);
                 }
                 newMoved = true;
                 ThrowIfCancellationRequested();
@@ -741,6 +771,7 @@ internal static class Setup
                 ThrowIfCancellationRequested();
                 commitStarted = true;
                 committed = true;
+                if (Directory.Exists(stage)) DeleteTree(stage);
                 if (oldMoved && Directory.Exists(backup)) DeleteTree(backup);
                 SetProgress(Translate("ติดตั้งเสร็จแล้ว", activeInstallLanguage), 100);
                 BeginInvoke((Action)delegate
@@ -763,14 +794,12 @@ internal static class Setup
                 }
                 if (!committed && oldMoved && Directory.Exists(backup) && !Directory.Exists(target))
                 {
-                    try { Directory.Move(backup, target); } catch (Exception cleanupError) { cleanupNote += "\nกู้คืนโฟลเดอร์เดิมไม่สำเร็จ: " + cleanupError.Message; }
+                    try { RetryFileOperation(delegate { Directory.Move(backup, target); }); } catch (Exception cleanupError) { cleanupNote += "\nกู้คืนโฟลเดอร์เดิมไม่สำเร็จ: " + cleanupError.Message; }
                 }
                 if (Directory.Exists(stage))
                 {
                     try { DeleteTree(stage); } catch (Exception cleanupError) { cleanupNote += "\nลบไฟล์ชั่วคราวไม่สำเร็จ: " + cleanupError.Message; }
                 }
-                try { if (Directory.Exists(tempRoot) && Directory.GetFileSystemEntries(tempRoot).Length == 0) Directory.Delete(tempRoot); }
-                catch (Exception cleanupError) { cleanupNote += "\nลบโฟลเดอร์ชั่วคราวไม่สำเร็จ: " + cleanupError.Message; }
                 if (!committed && registration != null)
                 {
                     try { RestoreRegistration(registration); } catch (Exception cleanupError) { cleanupNote += "\nคืนค่าข้อมูลเดิมไม่สำเร็จ: " + cleanupError.Message; }
@@ -797,7 +826,7 @@ internal static class Setup
                 }
                 if (!committed && oldMoved && Directory.Exists(backup) && !Directory.Exists(target))
                 {
-                    try { Directory.Move(backup, target); } catch (Exception cleanupError) { cleanupNote += "\nกู้คืนโฟลเดอร์เดิมไม่สำเร็จ: " + cleanupError.Message; }
+                    try { RetryFileOperation(delegate { Directory.Move(backup, target); }); } catch (Exception cleanupError) { cleanupNote += "\nกู้คืนโฟลเดอร์เดิมไม่สำเร็จ: " + cleanupError.Message; }
                 }
                 if (Directory.Exists(stage))
                 {
@@ -808,7 +837,7 @@ internal static class Setup
                     try { RestoreRegistration(registration); } catch (Exception cleanupError) { cleanupNote += "\nคืนค่าทางลัดหรือข้อมูลถอนการติดตั้งไม่สำเร็จ: " + cleanupError.Message; }
                 }
                 string error = committed
-                    ? "เวอร์ชันใหม่ติดตั้งแล้ว แต่ลบไฟล์เวอร์ชันเดิมไม่สำเร็จ: " + ex.Message + cleanupNote
+                    ? "เวอร์ชันใหม่ติดตั้งแล้ว แต่ลบไฟล์ชั่วคราวหรือไฟล์เวอร์ชันเดิมไม่สำเร็จ: " + ex.Message + cleanupNote
                     : Translate("ติดตั้งไม่สำเร็จ ระบบลบไฟล์ชั่วคราวและพยายามคืนไฟล์เดิมแล้ว\n\n", activeInstallLanguage) + ex.Message + cleanupNote;
                 BeginInvoke((Action)delegate
                 {
@@ -821,8 +850,34 @@ internal static class Setup
             }
         }
 
+        private void CopyStagedInstallation(string stage, ref bool newMoved)
+        {
+            // The fallback needs extra space while the staged payload remains on disk.
+            long available = new DriveInfo(Path.GetPathRoot(target)).AvailableFreeSpace;
+            if (available < requiredBytes)
+                throw new IOException("Not enough free space for the installation copy fallback.");
+            // Mark first so rollback removes even a partially copied installation.
+            newMoved = true;
+            CopyDirectory(stage, target);
+            ThrowIfCancellationRequested();
+        }
+
+        private static void RetryFileOperation(Action operation)
+        {
+            for (int attempt = 0; ; attempt++)
+            {
+                try { operation(); return; }
+                catch (IOException) { if (attempt >= 3) throw; }
+                catch (UnauthorizedAccessException) { if (attempt >= 3) throw; }
+                System.Threading.Thread.Sleep(250 * (attempt + 1));
+            }
+        }
+
         private void CopyDirectory(string source, string destination)
         {
+            Directory.CreateDirectory(destination);
+            foreach (string directory in Directory.GetDirectories(source, "*", SearchOption.AllDirectories))
+                Directory.CreateDirectory(Path.Combine(destination, directory.Substring(source.TrimEnd(Path.DirectorySeparatorChar).Length + 1)));
             string[] files = Directory.GetFiles(source, "*", SearchOption.AllDirectories);
             long total = 0;
             foreach (string file in files) total += new FileInfo(file).Length;
@@ -940,7 +995,10 @@ internal static class Setup
             {
                 try { File.SetAttributes(file, FileAttributes.Normal); } catch { }
             }
-            Directory.Delete(path, true);
+            foreach (string directory in Directory.GetDirectories(path, "*", SearchOption.AllDirectories))
+                File.SetAttributes(directory, FileAttributes.Normal);
+            File.SetAttributes(path, FileAttributes.Normal);
+            RetryFileOperation(delegate { Directory.Delete(path, true); });
         }
     }
 

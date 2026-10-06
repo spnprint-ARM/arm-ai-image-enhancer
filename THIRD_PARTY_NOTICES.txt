@@ -1,0 +1,461 @@
+ARM AI Image Enhancer — THIRD-PARTY NOTICES
+
+Versions below describe the configured runtime and bundled model files.
+Full original license/copyright/NOTICE texts are in the licenses folder.
+Model files and library code are listed separately; a project license is
+not a blanket assertion of separate checkpoint or training-data rights.
+
+Real-ESRGAN — 0.3.0
+Type: library
+License: BSD-3-Clause
+Developers: Xintao Wang and contributors
+Source: https://github.com/xinntao/Real-ESRGAN
+License files: licenses/realesrgan/LICENSE
+
+GFPGAN — 1.3.8
+Type: library
+License: Apache-2.0
+Developers: Xintao Wang, Yu Li, Honglun Zhang, Ying Shan / Tencent ARC
+Source: https://github.com/TencentARC/GFPGAN
+License files: licenses/gfpgan/LICENSE
+
+PyTorch — 2.11.0+cu128
+Type: library
+License: BSD-3-Clause (plus bundled third-party terms)
+Developers: PyTorch contributors
+Source: https://github.com/pytorch/pytorch
+License files: licenses/torch/LICENSE, licenses/torch/NOTICE
+
+TorchVision — 0.26.0+cu128
+Type: library
+License: BSD-3-Clause
+Developers: PyTorch contributors
+Source: https://github.com/pytorch/vision
+License files: licenses/torchvision/LICENSE
+
+BasicSR — 1.4.2
+Type: library
+License: Apache-2.0
+Developers: Xintao Wang and contributors
+Source: https://github.com/XPixelGroup/BasicSR
+License files: licenses/basicsr/licenses/LICENSE.txt
+
+facexlib — 0.3.0
+Type: library
+License: MIT
+Developers: Xintao Wang and contributors
+Source: https://github.com/xinntao/facexlib
+License files: licenses/facexlib/LICENSE
+
+numpy — 2.5.2
+Type: library
+License: BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0
+Developers: Travis E. Oliphant et al.
+Source: https://github.com/numpy/numpy
+License files: licenses/numpy/licenses/LICENSE.txt, licenses/numpy/licenses/numpy/ma/LICENSE, licenses/numpy/licenses/numpy/random/LICENSE.md, licenses/numpy/licenses/numpy/fft/pocketfft/LICENSE.md, licenses/numpy/licenses/numpy/_core/src/highway/LICENSE, licenses/numpy/licenses/numpy/random/src/pcg64/LICENSE.md, licenses/numpy/licenses/numpy/random/src/sfc64/LICENSE.md, licenses/numpy/licenses/numpy/_core/src/umath/svml/LICENSE, licenses/numpy/licenses/numpy/random/src/philox/LICENSE.md, licenses/numpy/licenses/numpy/random/src/mt19937/LICENSE.md, licenses/numpy/licenses/numpy/linalg/lapack_lite/LICENSE.txt, licenses/numpy/licenses/numpy/random/src/splitmix64/LICENSE.md, licenses/numpy/licenses/numpy/random/src/distributions/LICENSE.md, licenses/numpy/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt, licenses/numpy/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt, licenses/numpy/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING, licenses/numpy/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md
+
+Pillow — 12.3.0
+Type: library
+License: MIT-CMU (plus bundled third-party terms)
+Developers: Pillow contributors / Secret Labs AB / Fredrik Lundh
+Source: https://github.com/python-pillow/Pillow
+License files: licenses/pillow/licenses/LICENSE
+
+OpenCV Python — 5.0.0.93
+Type: library
+License: Apache-2.0 (OpenCV); MIT (packaging); third-party terms
+Developers: OpenCV contributors and opencv-python maintainers
+Source: https://github.com/opencv/opencv-python
+License files: licenses/opencv-python/LICENSE.txt, licenses/opencv-python/LICENSE-3RD-PARTY.txt
+
+absl-py — 2.5.0
+Type: library
+License: Apache-2.0
+Developers: The Abseil Authors
+Source: https://github.com/abseil/abseil-py
+License files: licenses/absl-py/licenses/AUTHORS, licenses/absl-py/licenses/LICENSE
+
+addict — 2.4.0
+Type: library
+License: MIT
+Developers: Mats Julian Olsen
+Source: https://github.com/mewwts/addict
+License files: licenses/addict/LICENSE
+
+certifi — 2026.7.22
+Type: library
+License: MPL-2.0
+Developers: Kenneth Reitz
+Source: https://github.com/certifi/python-certifi
+License files: licenses/certifi/licenses/LICENSE
+
+charset-normalizer — 3.5.2
+Type: library
+License: MIT
+Developers: "Ahmed R. TAHRI" <tahri.ahmed@proton.me>
+Source: https://github.com/jawah/charset_normalizer/blob/master/CHANGELOG.md
+License files: licenses/charset-normalizer/licenses/LICENSE
+
+colorama — 0.4.6
+Type: library
+License: BSD License
+Developers: Jonathan Hartley <tartley@tartley.com>
+Source: https://github.com/tartley/colorama
+License files: licenses/colorama/licenses/LICENSE.txt
+
+contourpy — 1.4.0
+Type: library
+License: BSD-3-Clause
+Developers: Ian Thomas <ianthomas23@gmail.com>
+Source: https://github.com/contourpy/contourpy
+License files: licenses/contourpy/licenses/LICENSE
+
+cycler — 0.12.1
+Type: library
+License: BSD License
+Developers: Thomas A Caswell <matplotlib-users@python.org>
+Source: https://github.com/matplotlib/cycler
+License files: licenses/cycler/LICENSE
+
+filelock — 3.32.3
+Type: library
+License: MIT
+Developers: filelock contributors
+Source: https://github.com/tox-dev/py-filelock
+License files: licenses/filelock/licenses/LICENSE
+
+filterpy — 1.4.5
+Type: library
+License: MIT
+Developers: Roger Labbe
+Source: https://github.com/rlabbe/filterpy
+License files: licenses/filterpy/licenses/LICENSE
+
+fonttools — 4.66.1
+Type: library
+License: MIT
+Developers: Just van Rossum
+Source: http://github.com/fonttools/fonttools
+License files: licenses/fonttools/licenses/LICENSE, licenses/fonttools/licenses/LICENSE.external
+
+fsspec — 2026.7.0
+Type: library
+License: BSD-3-Clause
+Developers: fsspec contributors
+Source: https://filesystem-spec.readthedocs.io/en/latest/changelog.html
+License files: licenses/fsspec/licenses/LICENSE
+
+future — 1.0.0
+Type: library
+License: MIT
+Developers: Ed Schofield
+Source: https://github.com/PythonCharmers/python-future
+License files: licenses/future/LICENSE.txt
+
+grpcio — 1.84.0
+Type: library
+License: Apache-2.0
+Developers: The gRPC Authors <grpc-io@googlegroups.com>
+Source: https://github.com/grpc/grpc
+License files: licenses/grpcio/licenses/LICENSE
+
+idna — 3.20
+Type: library
+License: BSD-3-Clause
+Developers: Kim Davies <kim+pypi@gumleaf.org>
+Source: https://github.com/kjd/idna
+License files: licenses/idna/licenses/LICENSE.md
+
+ImageIO — 2.38.0
+Type: library
+License: BSD-2-Clause
+Developers: ImageIO contributors
+Source: https://github.com/imageio/imageio
+License files: licenses/imageio/licenses/LICENSE
+
+Jinja2 — 3.1.6
+Type: library
+License: BSD License
+Developers: Jinja2 contributors
+Source: https://github.com/pallets/jinja/
+License files: licenses/jinja2/licenses/LICENSE.txt
+
+kiwisolver — 1.5.1
+Type: library
+License: BSD License
+Developers: The Nucleic Development Team <sccolbert@gmail.com>
+Source: https://github.com/nucleic/kiwi
+License files: licenses/kiwisolver/licenses/LICENSE
+
+lazy-loader — 0.6
+Type: library
+License: BSD-3-Clause
+Developers: Scientific Python Developers
+Source: https://github.com/scientific-python/lazy-loader
+License files: licenses/lazy-loader/licenses/LICENSE.md
+
+llvmlite — 0.50.0
+Type: library
+License: BSD-2-Clause AND Apache-2.0 WITH LLVM-exception
+Developers: llvmlite contributors
+Source: https://github.com/numba/llvmlite
+License files: licenses/llvmlite/licenses/LICENSE, licenses/llvmlite/licenses/LICENSE.thirdparty
+
+lmdb — 2.3.0
+Type: library
+License: OLDAP-2.8
+Developers: David Wilson
+Source: http://github.com/jnwatson/py-lmdb/
+License files: licenses/lmdb/licenses/LICENSE
+
+Markdown — 3.11
+Type: library
+License: BSD-3-Clause
+Developers: Manfred Stienstra, Yuri Takhteyev
+Source: https://github.com/Python-Markdown/markdown
+License files: licenses/markdown/licenses/LICENSE.md
+
+MarkupSafe — 3.0.3
+Type: library
+License: BSD-3-Clause
+Developers: MarkupSafe contributors
+Source: https://github.com/pallets/markupsafe/
+License files: licenses/markupsafe/licenses/LICENSE.txt
+
+matplotlib — 3.11.2
+Type: library
+License: MIT
+Developers: John D. Hunter, Michael Droettboom
+Source: https://github.com/matplotlib/matplotlib
+License files: licenses/matplotlib/LICENSE
+
+mpmath — 1.3.0
+Type: library
+License: BSD
+Developers: Fredrik Johansson
+Source: https://github.com/fredrik-johansson/mpmath
+License files: licenses/mpmath/LICENSE
+
+networkx — 3.6.1
+Type: library
+License: BSD-3-Clause
+Developers: Aric Hagberg <hagberg@lanl.gov>
+Source: https://github.com/networkx/networkx
+License files: licenses/networkx/licenses/LICENSE.txt
+
+numba — 0.68.0
+Type: library
+License: MIT
+Developers: numba contributors
+Source: https://numba.pydata.org
+License files: licenses/numba/licenses/LICENSE, licenses/numba/licenses/LICENSES.third-party
+
+packaging — 26.3
+Type: library
+License: Apache-2.0 OR BSD-2-Clause
+Developers: Donald Stufft <donald@stufft.io>
+Source: https://github.com/pypa/packaging
+License files: licenses/packaging/licenses/LICENSE, licenses/packaging/licenses/LICENSE.BSD, licenses/packaging/licenses/LICENSE.APACHE
+
+platformdirs — 4.12.2
+Type: library
+License: MIT
+Developers: platformdirs contributors
+Source: https://github.com/tox-dev/platformdirs
+License files: licenses/platformdirs/licenses/LICENSE
+
+protobuf — 7.36.2
+Type: library
+License: 3-Clause BSD License
+Developers: protobuf@googlegroups.com
+Source: https://developers.google.com/protocol-buffers/
+License files: licenses/protobuf/LICENSE
+
+pyparsing — 3.3.3
+Type: library
+License: MIT
+Developers: Paul McGuire <ptmcg.gm+pyparsing@gmail.com>
+Source: https://github.com/pyparsing/pyparsing.git
+License files: licenses/pyparsing/licenses/LICENSE
+
+python-dateutil — 2.9.0.post0
+Type: library
+License: Apache-2.0
+Developers: Gustavo Niemeyer
+Source: https://github.com/dateutil/dateutil
+License files: licenses/python-dateutil/LICENSE
+
+PyYAML — 6.0.3
+Type: library
+License: MIT
+Developers: Kirill Simonov
+Source: https://github.com/yaml/pyyaml
+License files: licenses/pyyaml/licenses/LICENSE
+
+requests — 2.34.2
+Type: library
+License: Apache-2.0
+Developers: Kenneth Reitz <me@kennethreitz.org>
+Source: https://github.com/psf/requests
+License files: licenses/requests/licenses/LICENSE, licenses/requests/licenses/NOTICE
+
+scikit-image — 0.26.0
+Type: library
+License: MIT
+Developers: scikit-image contributors
+Source: https://github.com/scikit-image/scikit-image
+License files: licenses/scikit-image/LICENSE.txt
+
+scipy — 1.18.1
+Type: library
+License: BSD License
+Developers: scipy contributors
+Source: https://github.com/scipy/scipy
+License files: licenses/scipy/LICENSE.txt
+
+setuptools — 78.1.0
+Type: library
+License: MIT
+Developers: Python Packaging Authority <distutils-sig@python.org>
+Source: https://github.com/pypa/setuptools
+License files: licenses/setuptools/LICENSE, licenses/setuptools/LICENSE.BSD, licenses/setuptools/LICENSE.txt, licenses/setuptools/LICENSE.APACHE, licenses/setuptools/licenses/LICENSE
+
+six — 1.17.0
+Type: library
+License: MIT
+Developers: Benjamin Peterson
+Source: https://github.com/benjaminp/six
+License files: licenses/six/LICENSE
+
+sympy — 1.14.0
+Type: library
+License: MIT
+Developers: SymPy development team
+Source: https://github.com/sympy/sympy
+License files: licenses/sympy/licenses/AUTHORS, licenses/sympy/licenses/LICENSE
+
+tb-nightly — 2.21.0a20251023
+Type: library
+License: MIT
+Developers: Google Inc.
+Source: https://github.com/tensorflow/tensorboard
+License files: licenses/tb-nightly/licenses/LICENSE
+
+tensorboard-data-server — 0.7.2
+Type: library
+License: Apache-2.0
+Developers: Google Inc.
+Source: https://github.com/tensorflow/tensorboard/tree/master/tensorboard/data/server
+License files: licenses/tensorboard-data-server/LICENSE.txt
+
+tifffile — 2026.9.20
+Type: library
+License: BSD-3-Clause
+Developers: Christoph Gohlke
+Source: https://github.com/cgohlke/tifffile
+License files: licenses/tifffile/licenses/LICENSE
+
+tqdm — 4.70.1
+Type: library
+License: MPL-2.0 AND MIT
+Developers: tqdm contributors
+Source: https://github.com/tqdm/tqdm
+License files: licenses/tqdm/licenses/LICENCE
+
+typing_extensions — 4.16.0
+Type: library
+License: PSF-2.0
+Developers: "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee" <levkivskyi@gmail.com>
+Source: https://github.com/python/typing_extensions
+License files: licenses/typing-extensions/licenses/LICENSE
+
+urllib3 — 2.8.0
+Type: library
+License: MIT
+Developers: Andrey Petrov <andrey.petrov@shazow.net>
+Source: https://github.com/urllib3/urllib3/blob/main/CHANGES.rst
+License files: licenses/urllib3/licenses/LICENSE.txt
+
+Werkzeug — 3.1.9
+Type: library
+License: BSD-3-Clause
+Developers: Werkzeug contributors
+Source: https://github.com/pallets/werkzeug/
+License files: licenses/werkzeug/licenses/LICENSE.txt
+
+yapf — 0.43.0
+Type: library
+License: Apache-2.0
+Developers: Google Inc.
+Source: https://github.com/google/yapf
+License files: licenses/yapf/AUTHORS, licenses/yapf/LICENSE
+
+Python — 3.12.10
+Type: runtime
+License: PSF-2.0 and historical licenses
+Developers: Python Software Foundation and contributors
+Source: https://www.python.org/
+License files: licenses/python/LICENSE.txt
+
+Tcl — 8.6.15
+Type: runtime
+License: Tcl/Tk license
+Developers: Regents of the University of California, Sun Microsystems, Scriptics, ActiveState and contributors
+Source: https://github.com/tcltk/tcl
+License files: licenses/tcl/LICENSE.txt
+
+Tk — 8.6.15
+Type: runtime
+License: Tcl/Tk license
+Developers: Regents of the University of California, Sun Microsystems, Scriptics, ActiveState and contributors
+Source: https://github.com/tcltk/tk
+License files: licenses/tk/license.terms
+
+RealESRGAN_x4plus — v0.1.0 release / x4plus
+Type: model
+License: BSD-3-Clause (upstream project)
+Developers: Xintao Wang and Real-ESRGAN contributors
+Source: https://github.com/xinntao/Real-ESRGAN/releases/tag/v0.1.0
+License files: licenses/realesrgan/LICENSE
+Model file: models/RealESRGAN_x4plus.pth
+SHA-256: 4fa0d38905f75ac06eb49a7951b426670021be3018265fd191d2125df9d682f1
+The checkpoint is distributed by the upstream project. Its project license is included; no separate checkpoint-specific license was identified.
+
+GFPGANv1.4 — 1.4
+Type: model
+License: Apache-2.0 (upstream project)
+Developers: Tencent ARC / GFPGAN contributors
+Source: https://github.com/TencentARC/GFPGAN/releases/tag/v1.3.0
+License files: licenses/gfpgan/LICENSE
+Model file: models/face/GFPGANv1.4.pth
+SHA-256: e2cd4703ab14f4d01fd1383a8a8b266f9a5833dacee8e6a79d3bf21a1b6be5ad
+The model name is v1.4; its hosting release tag is v1.3.0. The project license is included; no separate checkpoint-specific license was identified.
+
+RetinaFace ResNet50 — facexlib v0.1.0 release
+Type: model
+License: MIT (code; checkpoint terms not separately stated)
+Developers: Jiankang Deng, biubug6 / Pytorch_Retinaface contributors; packaged by Xintao Wang
+Source: https://github.com/xinntao/facexlib/releases/tag/v0.1.0
+License files: licenses/pytorch-retinaface/LICENSE.txt, licenses/facexlib/LICENSE
+Model file: models/face/detection_Resnet50_Final.pth
+SHA-256: 6d1de9c2944f2ccddca5f5e010ea5ae64a39845a86311af6fdf30841b0a5a16d
+Source implementation: https://github.com/biubug6/Pytorch_Retinaface. Release does not state a separate checkpoint license.
+
+ParseNet face parsing — facexlib v0.2.2 release
+Type: model
+License: MIT (facexlib); CC-BY-NC-SA-4.0 (PSFR-GAN source)
+Developers: Chaofeng Chen / PSFR-GAN contributors; adapted by Xintao Wang / facexlib
+Source: https://github.com/xinntao/facexlib/releases/tag/v0.2.2
+License files: licenses/facexlib/LICENSE, licenses/psfrgan/LICENSE.txt
+Model file: models/face/parsing_parsenet.pth
+SHA-256: 3d558d8d0e42c20224f13cf5a29c79eba2d59913419f945545d8cf7b72920de2
+facexlib/parsing/parsenet.py says it is modified from https://github.com/chaofengc/PSFRGAN, whose source license is CC-BY-NC-SA-4.0. The checkpoint release does not separately state its license. Library and model terms must not be treated as interchangeable.
+
+PSFR-GAN / ParseNet source — upstream source; no version declared
+Type: source
+License: CC-BY-NC-SA-4.0
+Developers: Chaofeng Chen and contributors
+Source: https://github.com/chaofengc/PSFRGAN
+License files: licenses/psfrgan/LICENSE.txt
+ParseNet in facexlib identifies this project as its source. This credit concerns source code; checkpoint licensing is listed separately.
+
