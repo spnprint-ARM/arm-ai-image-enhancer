@@ -9,6 +9,8 @@
   Windows 10/11 64-bit · AI Upscaling · Custom Print Size & DPI · Face Recovery
 </p>
 
+4 Languages, English, Thai, Chinese, French
+
 ARM AI Image Enhancer is a Windows desktop application for enlarging images with AI and preparing them for real-world print production. Set a physical output size and DPI, compare image details in Live Preview, and prepare artwork for posters, signage, and large-format printing.
 
 **V2.2.8 supports Windows 10 and Windows 11, 64-bit only.
