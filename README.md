@@ -21,7 +21,7 @@ Windows 7, Windows 8, Windows 8.1, and all 32-bit Windows versions are not suppo
 ## Program Overview
 
 <p align="center">
-  <img src="assets/screenShot1.png" alt="ARM AI Image Enhancer V2.2.8 interface with print dimensions, DPI, image comparison, face recovery, and device selection" width="100%">
+  <img src="assets/screenShot.png" alt="ARM AI Image Enhancer V2.2.8 interface with print dimensions, DPI, image comparison, face recovery, and device selection" width="100%">
 </p>
 
 ## Features in V2.2.8
